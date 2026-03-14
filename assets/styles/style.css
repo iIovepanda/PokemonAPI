@@ -121,3 +121,9 @@ input {
 .result dd {
   margin: 0;
 }
+
+#type-result {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}

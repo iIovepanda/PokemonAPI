@@ -22,3 +22,20 @@ export const showData = (data, type) => {
     document.querySelector("#random-result").innerHTML = htmlData;
   }
 }
+
+export const showData2 = (data) => {
+  let htmlData = "";
+
+  data.forEach(p => {
+    htmlData += `
+      <dl>
+        <dt>${p.name}</dt>
+        <dd><img src="${p.img}"></dd
+        <dd>ID:${p.id}</dd>
+      </dl>
+    `;
+  });
+
+  document.querySelector("#type-result").innerHTML = htmlData;
+
+}
