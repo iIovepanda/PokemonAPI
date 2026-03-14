@@ -9,12 +9,16 @@ export const extractData = (pokemonData) => {
   return {id, name, img, types}
 }
 
-export const showData = (data) => {
+export const showData = (data, type) => {
   const htmlData = `<dl>
     <dt>Name: ${data.name}</dt>
     <dd><img src="${data.img}" alt=""></dd>
     <dd>ID: ${data.id}</dd>
     <dt>Types: ${data.types.join(", ")}</dd>
   </dl>`
-  document.querySelector("#js-result").innerHTML = htmlData;
+  if(type === 'name'){
+    document.querySelector("#js-result").innerHTML = htmlData;
+  }else{
+    document.querySelector("#random-result").innerHTML = htmlData;
+  }
 }

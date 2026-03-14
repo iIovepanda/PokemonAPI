@@ -13,7 +13,19 @@ const submitHandler = async (e) => {
   const inputName = getInputName(e);
   const pokemonData = await getPokemonData(inputName);
   const extractedData = extractData(pokemonData)
-  showData(extractedData);
+  showData(extractedData, 'name');
+}
+
+const submitHandlerRandom = async (e) => {
+  e.preventDefault();
+  // ランダムなIDを生成
+  const id = Math.floor(Math.random() * 151) + 1;
+  console.log(id);
+  const pokemonData = await getPokemonData(id.toString());
+  const extractedRandomData = extractData(pokemonData);
+  showData(extractedRandomData, 'random');
 }
 
 document.querySelector("#js-form").addEventListener("submit", (e) => submitHandler(e));
+
+document.querySelector('#random').addEventListener("submit", (e) => submitHandlerRandom(e));
